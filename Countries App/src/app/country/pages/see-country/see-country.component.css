@@ -1,0 +1,27 @@
+*{
+  padding: 0;
+  margin: 0;
+}
+.info{
+  display: grid;
+  grid-template-columns: 35% 1fr;
+  column-gap: 20px;
+}
+.info img{
+  width: 100%;
+  border: 1px solid rgb(192, 192, 192);
+}
+.info div{
+  padding: 20px;
+  background-color: rgb(206, 206, 206);
+}
+.info div h2 {
+  font-size: 1.6rem;
+}
+.info div h4{
+  font-size: 1.3rem;
+  margin-bottom: 45px;
+}
+.info div p{
+  margin-bottom: 5px;
+}

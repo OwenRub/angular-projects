@@ -1,0 +1,24 @@
+<div class="animate__animated animate__fadeIn">
+  <h2>By Country</h2>
+  <hr>
+  <app-input 
+          (onEnter)="searchCountry( $event )"
+          (onDebounce)="makeSuggestion( $event )"
+          placeholder="Search Country...">
+  </app-input>
+  <ul *ngIf="showSuggestions" class="suggestions-list">
+    <li *ngFor="let country of suggestions"
+        [routerLink]="['details/', country.cca3]">
+      {{ country.name.common }}
+    </li>
+  </ul>
+</div>
+
+<div *ngIf="errorOccurred" class="alert-msg">
+  <p>No results found</p>
+</div>
+
+<app-table 
+  [countries]="countries"
+  route="details/">
+</app-table>

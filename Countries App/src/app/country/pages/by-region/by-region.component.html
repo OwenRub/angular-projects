@@ -1,0 +1,22 @@
+<div class="animate__animated animate__fadeIn">
+  <h2>By Region</h2>
+  <hr>
+  <h3>Select a continent</h3>
+
+  <div class="continent-options">
+    <button [class.regSelected]="region === activeRegion"
+            *ngFor="let region of regions"
+            (click)="activateRegion( region )">
+      {{region}}
+    </button>
+  </div>
+</div>
+
+<div *ngIf="errorOccurred" class="alert-msg">
+  <p>No results found</p>
+</div>
+
+<app-table
+  route="../details/"
+  [countries]="countries">
+</app-table>
