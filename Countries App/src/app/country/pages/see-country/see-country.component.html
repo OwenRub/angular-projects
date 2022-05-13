@@ -1,0 +1,25 @@
+<div *ngIf="!country; else countryDiv" class="loading">
+  <p>Loading ...</p>
+</div>
+
+<ng-template #countryDiv>
+  <div class="info">
+    <img [src]="country.flags.svg" [alt]="country.name.common">
+    <div>
+      <h2>{{ country.name.common }}  {{ country.flag }}</h2>
+      <h4>{{ country.name.official }}</h4>
+      <p><b>Capital:  </b>{{country.capital[0]}}</p>
+      <p><b>Language:  </b>{{getLanguage()[0]}}</p>
+      <p><b>Currency:  </b>{{ getCurrency()[0].name }} ({{getCurrency()[0].symbol}})</p>
+      <br>
+      <p><b>Population:  </b>{{ country.population | number }}</p>
+      <p><b>Area:  </b>{{country.area | number}} Km<sup>2</sup></p>
+      <p><b>Continent:  </b>{{country.region}}</p>
+      <p><b>Dependency:  </b>{{country.independent ? 'Independent' : 'Not Independent'}}</p>
+    </div>
+  </div>
+</ng-template>
+
+<div *ngIf="errorOccurred" class="alert-msg">
+  <p>No results found</p>
+</div>
