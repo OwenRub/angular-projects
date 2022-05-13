@@ -1,0 +1,15 @@
+<aside id="sidebar">
+
+  <h3>gifsApp</h3>
+  <hr>
+
+  <div class="history">
+    <a 
+      *ngFor="let record of userHistory" 
+      href="#"
+      (click)="getGifs( record )">
+      {{ record | titlecase }}
+    </a>
+  </div>
+  
+</aside>
