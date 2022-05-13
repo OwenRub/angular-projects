@@ -1,0 +1,10 @@
+<div 
+  *ngFor="let gif of gifResults"
+  class="my-card animate__animated animate__fadeIn">
+  <img 
+    [src]="gif.images.downsized.url" 
+    [alt]="gif.title">
+  <h5>
+    {{ gif.title }}
+  </h5>
+</div>
